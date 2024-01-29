@@ -1,40 +1,43 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
+import Design from "./Design/Design";
 
 function App() {
-  const [inputText, setInputText] = useState('');
-  const [response, setResponse] = useState('');
+  const [inputText, setInputText] = useState("");
+  const [response, setResponse] = useState("");
 
   const handleSubmit = async () => {
     try {
-      const result = await axios.post('http://localhost:3001/api/displayText', {
+      const result = await axios.post("http://localhost:3001/api/displayText", {
         text: inputText,
       });
 
-      console.log('Server Response:', result.data); // Add this line
+      console.log("Server Response:", result.data); // Add this line
 
       setResponse(result.data.message);
     } catch (error) {
-      console.error('Error sending text:', error);
+      console.error("Error sending text:", error);
     }
   };
 
   return (
+    // <div>
+    //   <h1>React Node.js Test</h1>
+    //   <input
+    //     type="text"
+    //     value={inputText}
+    //     onChange={(e) => setInputText(e.target.value)}
+    //   />
+    //   <button onClick={handleSubmit}>Send Text</button>
+    //   {response && <p>Server Response: {response}</p>}
+    // </div>
     <div>
-      <h1>React Node.js Test</h1>
-      <input
-        type="text"
-        value={inputText}
-        onChange={(e) => setInputText(e.target.value)}
-      />
-      <button onClick={handleSubmit}>Send Text</button>
-      {response && <p>Server Response: {response}</p>}
+      <Design />
     </div>
   );
 }
 
 export default App;
-
 
 // import React from 'react'
 

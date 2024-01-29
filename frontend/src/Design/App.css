@@ -7,7 +7,7 @@
 }
 
 .content {
-  background: #81d947;
+  background: #a0a0a0;
   height: 100vh;
   width: 100vw;
   background-image: url(./Assets/siteBackground.png);
@@ -120,7 +120,7 @@ p {
 }
 
 .bot .SinglesproutChatBubble {
-  background-color: #82d838;
+  background-color: #686868;
   color: #ffffff;
   align-self: flex-start;
   border-radius: 5px 25px 25px 25px;

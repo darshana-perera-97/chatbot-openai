@@ -60,7 +60,7 @@
   flex-direction: column;
   margin-bottom: 5vh;
   margin-right: 4vw;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .sproutHeader {
@@ -70,7 +70,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 15px 15px 0px 0px;
+  border-radius: 10px 10px 0px 0px;
   padding-bottom: 10px;
 }
 
@@ -120,10 +120,10 @@ p {
 }
 
 .bot .SinglesproutChatBubble {
-  background-color: #686868;
+  background-color: #4f5b79;
   color: #ffffff;
   align-self: flex-start;
-  border-radius: 5px 25px 25px 25px;
+  border-radius: 0px 10px 10px 10px;
 }
 
 .person {
@@ -131,10 +131,10 @@ p {
 }
 
 .person .SinglesproutChatBubble {
-  background-color: #e3e2e3;
-  color: #2f4857;
+  background-color: #e3e0e0d8;
+  color: #757575;
   align-self: flex-end;
-  border-radius: 25px 5px 25px 25px;
+  border-radius: 10px 0px 10px 10px;
 }
 
 .fullScreen .person .SinglesproutChatBubble {
@@ -149,7 +149,7 @@ p {
 .sproutChatInput {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  /* padding: 10px; */
   border-top: 1px solid #ccc;
 }
 
@@ -193,7 +193,7 @@ p {
 }
 
 .sproutHeader .controllerSet img {
-  height: 18px;
+  height: 30px;
   margin-left: 5px;
   cursor: pointer;
 }
@@ -226,7 +226,7 @@ p {
 }
 
 .SinglesproutChatBubble p {
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .senderIcon p {
@@ -240,21 +240,22 @@ p {
   border: 0px solid Black;
   flex: 1;
   margin-right: 10px;
-  box-shadow: 0px 0px 10px #b7b7b7c7;
-  padding: 10px 20px;
+  /* box-shadow: 0px 0px 10px #b7b7b7c7; */
+  padding: 15px 20px;
   border-radius: 25px;
 }
 
 .sproutChatInput {
-  padding: 15px 25px;
-  padding-bottom: 6px;
+  /* padding: 15px 25px;
+  padding-bottom: 6px; */
 }
 
 .sproutChatInput img {
-  height: 25px;
-  margin: 0px 5px;
-  margin-top: 7px;
+  height: 55px;
+  background-color: #4f5b79;
   cursor: pointer;
+  padding: 15px;
+  border-radius: 0px 0px 10px 0px;
 }
 
 .chatDate p {
@@ -385,7 +386,7 @@ p {
 
 .botDetails h2 {
   height: 35px;
-  color: #a2a3a3;
+  color: #4e5a79;
   font-weight: 400;
   margin: 0px;
   margin-left: 10px;

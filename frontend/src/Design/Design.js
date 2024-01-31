@@ -60,72 +60,77 @@ const Design = () => {
   }, [messages]);
 
   return (
-    <div className={`SproutApp ${isFullScreen ? "fullScreen" : ""}`}>
-      {/* Main content of your app */}
-      <div className="content">{/* <h1>Your App Content</h1> */}</div>
+    <div >
+      <div className={`SproutApp ${isFullScreen ? "fullScreen" : ""}`}>
+        {/* Main content of your app */}
+        <div className="content">{/* <h1>Your App Content</h1> */}</div>
 
-      {/* Chat Icon */}
-      {!isChatOpen && (
-        <div className="sproutChatIcon" onClick={toggleChat}>
-          <img src={homeWindowIcon} alt="Chat Icon" />
-        </div>
-      )}
-      {/* Floating Chat Window */}
-      {isChatOpen && (
-        <div className={`sproutChatWindow ${isFullScreen ? "fullScreen" : ""}`}>
-          <div className="sproutHeader">
-            {/* <img src={sproutLogo} alt="Sprout Logo" /> */}
-            <div className="botDetails">
-              <img src={sproutLogo} alt="Sprout Logo" />
-              <h2>Bot Name here</h2>
-            </div>
-            <div>
-              <div className="controllerSet">
-                <img src={minimize} alt="cancel Button" onClick={toggleChat} />
-                <img
-                  src={maximize}
-                  alt="cancel Button"
-                  onClick={toggleFullScreen}
-                />
-                <img src={cancel} alt="cancel Button" onClick={toggleChat} />
+        {/* Chat Icon */}
+        {!isChatOpen && (
+          <div className="sproutChatIcon" onClick={toggleChat}>
+            <img src={homeWindowIcon} alt="Chat Icon" />
+          </div>
+        )}
+        {/* Floating Chat Window */}
+        {isChatOpen && (
+          <div
+            className={`sproutChatWindow ${isFullScreen ? "fullScreen" : ""}`}
+          >
+            <div className="sproutHeader">
+              {/* <img src={sproutLogo} alt="Sprout Logo" /> */}
+              <div className="botDetails">
+                <img src={sproutLogo} alt="Sprout Logo" />
+                <h2>Bot Name here</h2>
               </div>
-              {/* <img
+              <div>
+                <div className="controllerSet">
+                  <img
+                    src={minimize}
+                    alt="cancel Button"
+                    onClick={toggleChat}
+                  />
+                </div>
+                {/* <img
                 src={onlineText}
                 alt="cancel Button"
                 className="online-text"
               /> */}
-            </div>
-          </div>
-          <div className="sproutChatContent" ref={chatContentRef}>
-            <div className="chatDate">
-              <p>Today, 08th January 2024</p>
-            </div>
-            {messages.map((message, index) => (
-              <div key={index} className={`sproutChatBubble ${message.sender}`}>
-                <div className={`SinglesproutChatBubble`}>
-                  <p>
-                    <span
-                      className="chatText"
-                      dangerouslySetInnerHTML={{ __html: message.message }}
-                    />
-                  </p>
-                </div>
               </div>
-            ))}
-          </div>
-          <div className="sproutChatInput">
-            <input
-              type="text"
-              placeholder="Type your message..."
-              value={newMessage}
-              onChange={handleInputChange}
-              onKeyPress={handleKeyPress}
-            />
+            </div>
+            <div className="sproutChatContent" ref={chatContentRef}>
+              <div className="chatDate">
+                <p>Today, 08th January 2024</p>
+              </div>
+              {messages.map((message, index) => (
+                <div
+                  key={index}
+                  className={`sproutChatBubble ${message.sender}`}
+                >
+                  <div className={`SinglesproutChatBubble`}>
+                    <p>
+                      <span
+                        className="chatText"
+                        dangerouslySetInnerHTML={{ __html: message.message }}
+                      />
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="sproutChatInput">
+              <input
+                type="text"
+                placeholder="Type your message..."
+                value={newMessage}
+                onChange={handleInputChange}
+                onKeyPress={handleKeyPress}
+              />
 
-            <img src={sendIcon} alt="Chat Icon" onClick={handleSend} />
+              <img src={sendIcon} alt="Chat Icon" onClick={handleSend} />
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };

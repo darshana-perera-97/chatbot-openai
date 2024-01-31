@@ -193,7 +193,7 @@ p {
 }
 
 .sproutHeader .controllerSet img {
-  height: 18px;
+  height: 300px;
   margin-left: 5px;
   cursor: pointer;
 }
@@ -333,7 +333,7 @@ p {
   }
 
   .sproutHeader .controllerSet img {
-    height: 12px;
+    height: 20px;
     margin-left: 5px;
     cursor: pointer;
   }

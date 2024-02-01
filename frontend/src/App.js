@@ -19,6 +19,17 @@ function App() {
       console.error("Error sending text:", error);
     }
   };
+  const handleSubmit2 = async () => {
+    try {
+      const result = await axios.post("http://localhost:3001/chat", {
+        text: inputText,
+      });
+
+      console.log(result.data.messages1); // Add this line
+    } catch (error) {
+      console.error("Error sending text:", error);
+    }
+  };
 
   return (
     // <div>
@@ -29,6 +40,7 @@ function App() {
     //     onChange={(e) => setInputText(e.target.value)}
     //   />
     //   <button onClick={handleSubmit}>Send Text</button>
+    //   <button onClick={handleSubmit2}>Send Text</button>
     //   {response && <p>Server Response: {response}</p>}
     // </div>
     <div>

@@ -16,10 +16,6 @@ const messages1 = [
       "You are a boy called Darshana Perera. And 26 years old who is working in hSenid Mobile Solutions.",
   },
   {
-    role: "user",
-    content: "hi\n",
-  },
-  {
     role: "assistant",
     content: "Hello! How can I assist you today?",
   },
@@ -73,7 +69,7 @@ app.post("/api/displayText", (req, res) => {
     role: "user",
     content: text,
   };
-  messages1.push(tmp);
+  messages1.push(text);
   runOpenAIChat();
 });
 app.post("/chat", (req, res) => {

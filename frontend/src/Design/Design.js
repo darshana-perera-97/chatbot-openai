@@ -8,20 +8,35 @@ import onlineText from "./Assets/onlineText.png";
 import chatIconSprout from "./Assets/chatIconSprout.png";
 import chatIconUser from "./Assets/chatIconUser.png";
 import sendIcon from "./Assets/sendIcon.png";
+import axios from "axios";
 import "./App.css";
 
 const Design = () => {
   const [isChatOpen, setChatOpen] = useState(true);
   const [isFullScreen, setFullScreen] = useState(false);
   const [messages, setMessages] = useState([
-    { sender: "bot", message: "Hello there!" },
-    { sender: "person", message: "Hello there!" },
     {
-      sender: "bot",
-      message:
-        "List Items will be showing here like this <br/><ul><li>Product features</li><li>Account management</li><li>FAQs</li></ul> last line is here",
+      role: "assistant",
+      content: "Hello! How can I assist you today?",
     },
   ]);
+  const handleSubmit2 = async () => {
+    try {
+      const result = await axios.post("http://localhost:3001/chat", {});
+
+      console.log(result.data.messages1); // Add this line
+
+      setMessages(result.data.messages1);
+    } catch (error) {
+      console.error("Error sending text:", error);
+    }
+  };
+  React.useEffect(() => {
+    handleSubmit2();
+  }, []);
+  const intervalId = setInterval(() => {
+    handleSubmit2();
+  }, 10000);
 
   const [newMessage, setNewMessage] = useState("");
   const chatContentRef = useRef(null);
@@ -40,7 +55,13 @@ const Design = () => {
 
   const handleSend = () => {
     if (newMessage.trim() !== "") {
-      setMessages([...messages, { sender: "person", message: newMessage }]);
+      setMessages([
+        ...messages,
+        {
+          role: "user",
+          content: newMessage,
+        },
+      ]);
       setNewMessage("");
     }
   };
@@ -51,6 +72,7 @@ const Design = () => {
       handleSend();
     }
   };
+  
 
   // useEffect to scroll down when a new message is added
   useEffect(() => {
@@ -60,7 +82,7 @@ const Design = () => {
   }, [messages]);
 
   return (
-    <div >
+    <div>
       <div className={`SproutApp ${isFullScreen ? "fullScreen" : ""}`}>
         {/* Main content of your app */}
         <div className="content">{/* <h1>Your App Content</h1> */}</div>
@@ -102,15 +124,12 @@ const Design = () => {
                 <p>Today, 08th January 2024</p>
               </div>
               {messages.map((message, index) => (
-                <div
-                  key={index}
-                  className={`sproutChatBubble ${message.sender}`}
-                >
+                <div key={index} className={`sproutChatBubble ${message.role}`}>
                   <div className={`SinglesproutChatBubble`}>
                     <p>
                       <span
                         className="chatText"
-                        dangerouslySetInnerHTML={{ __html: message.message }}
+                        dangerouslySetInnerHTML={{ __html: message.content }}
                       />
                     </p>
                   </div>

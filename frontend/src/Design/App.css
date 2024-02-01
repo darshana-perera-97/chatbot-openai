@@ -111,7 +111,7 @@
   margin-top: 12px;
 }
 
-.fullScreen .person {
+.fullScreen .user {
   margin-left: 50%;
 }
 
@@ -119,25 +119,29 @@ p {
   margin: 0px;
 }
 
-.bot .SinglesproutChatBubble {
+.assistant .SinglesproutChatBubble {
   background-color: #4f5b79;
   color: #ffffff;
   align-self: flex-start;
   border-radius: 0px 10px 10px 10px;
 }
 
-.person {
+.user {
   margin-left: 30%;
 }
 
-.person .SinglesproutChatBubble {
+.system .SinglesproutChatBubble {
+  display: none;
+}
+
+.user .SinglesproutChatBubble {
   background-color: #e3e0e0d8;
   color: #757575;
   align-self: flex-end;
   border-radius: 10px 0px 10px 10px;
 }
 
-.fullScreen .person .SinglesproutChatBubble {
+.fullScreen .user .SinglesproutChatBubble {
   max-width: 100%;
   margin-left: 5%;
 }
@@ -212,16 +216,16 @@ p {
   height: 27px;
 }
 
-.person .senderIcon {
+.user .senderIcon {
   justify-content: end;
   display: flex;
 }
 
-.bot .senderIcon img {
+.assistant .senderIcon img {
   margin-right: 4px;
 }
 
-.person .senderIcon img {
+.user .senderIcon img {
   margin-left: 4px;
 }
 
@@ -294,11 +298,11 @@ p {
   text-align: right;
 }
 
-.bot a {
+.assistant a {
   color: #ffffff;
 }
 
-.person a {
+.user a {
   color: #2f4857;
 }
 
